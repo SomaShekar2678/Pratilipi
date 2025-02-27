@@ -70,20 +70,20 @@ For more detailed information on the WARP loss function, refer to the original p
 
 ## **Evaluation**
 The model is evaluated using three key metrics:
-1. **Precision@20**: Measures how many of the top 20 recommended items are relevant to the user.
-2. **Recall@20**: Measures how many relevant items appear in the top 20 recommendations.
+1. **Precision@5**: Measures how many of the top 5 recommended items are relevant to the user.
+2. **Recall@5**: Measures how many relevant items appear in the top 5 recommendations.
 3. **AUC**: Measures the model’s ability to rank relevant items higher than irrelevant ones.
 
 ### **Evaluation Results**:
-- **Precision@20**: 0.0009
-- **Recall@20**: 0.0173
+- **Precision@5**: 0.0009
+- **Recall@5**: 0.0173
 - **AUC**: 0.8260
 
 ## **Discussion on Precision and Recall**
 Even though the **AUC** is relatively high (0.8260), indicating that the model is good at distinguishing between relevant and irrelevant items, both **Precision@20** and **Recall@20** are quite low.
 
 ### **Possible Causes**:
-1. **High Number of Items**: With a large number of pratilipis, the model might struggle to recommend highly relevant items in the top 20 recommendations, leading to low precision and recall.
+1. **High Number of Items**: With a large number of pratilipis, the model might struggle to recommend highly relevant items in the top 5 recommendations, leading to low precision and recall.
 2. **Cold Start Problem**: If there are users in the test set with no interactions in the training data, the model will struggle to provide relevant recommendations, especially for these cold start users.
 3. **Model Tuning**: The low precision and recall could be due to insufficient training or suboptimal hyperparameters (e.g., learning rate, number of epochs, regularization).
 
